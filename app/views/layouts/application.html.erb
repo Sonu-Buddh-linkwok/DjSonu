@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InvoiceManagement</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbolinks-visit-control" content="reload">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+      <%= render 'globals/navbar' %>
+      <%= render 'globals/sidebar' %>
+      <div id="main">
+        <div class="w3-container">
+          <div class="">
+            <% flash.each do |key, value| %>
+            <% if value != nil %>
+            <div class="alert alert-success">
+              <%= value %>
+            </div>
+            <% end %>
+            <% end %>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    <%#= render 'globals/footer' %>
+  </body>
+</html>
