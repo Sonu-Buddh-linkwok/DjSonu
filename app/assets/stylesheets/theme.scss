@@ -101,7 +101,11 @@ a, div, h1, h2, h3, h4, h5, p, span {
 }
   .table_header {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(120deg, #00e4d0, #5983e8);
+    background: black;
+    background-image: asset_url('header.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
 
 .side-btn:hover {
