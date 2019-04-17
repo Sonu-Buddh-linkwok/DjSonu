@@ -5,7 +5,7 @@
       <ul class=" one-line">
         <li class="nav navbar-right">
           <div class="w3-dropdown-click pull-right">
-            <strong><p onclick= "myFunction()" class="text_height" >Login  &nbsp <%= current_user.email%></p></strong>
+            <strong><p onclick= "myFunction()" class="text_height" >Login  &nbsp <%= current_user.email if current_user.present? %></p></strong>
             <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
               <% if user_signed_in? %>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'w3-bar-item w3-button' %>
