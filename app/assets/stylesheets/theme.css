@@ -46,10 +46,10 @@ element.theme {
     flex-direction: row;
     align-items: center;
 }
-@media (min-width: 768px)
+/* @media (min-width: 768px)
 .d-md-flex {
     display: flex !important;
-}
+} */
 /* .container {
     width: 1400px !important;
 } */
