@@ -11,15 +11,17 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.min
-//= require rails-ujs
+//= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui
-//= require common
-//= require plyr
+//= require jquery.min
+//= require bootstrap
+//= require popper.min
+//= require bootstrap.min
+//= require poca.bundle
+//= require active
+//= require_self
+
 //= require_tree .
 
 
-$(document).on("turbolinks:load", function() {
-   const player = new Plyr('#player');
- });
+//

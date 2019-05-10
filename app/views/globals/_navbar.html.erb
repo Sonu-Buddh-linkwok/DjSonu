@@ -1,21 +1,92 @@
-<nav class="w3-teal navbar table_header">
-  <div class="w3-container">
-      <%= link_to 'Dj Sonu', root_path, class: 'navbar-brand' %>
-      <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-      <ul class=" one-line">
-        <li class="nav navbar-right">
-          <div class="w3-dropdown-click pull-right">
-            <strong><p onclick= "myFunction()" class="text_height" >Login  &nbsp <%= current_user.email if current_user.present? %></p></strong>
-            <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
-              <% if user_signed_in? %>
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'w3-bar-item w3-button' %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'w3-bar-item w3-button' %>
-              <% else %>
-                <%= link_to "Sign up", new_user_registration_path, :class => 'w3-bar-item w3-button' %>
-                <%= link_to "Login", new_user_session_path, :class => 'w3-bar-item w3-button' %>
-              <% end %>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar justify-content-between" id="pocaNav">
+
+          <!-- Logo -->
+          <a class="nav-brand" href="index.html">
+            <%= image_tag "logo.png", alt: '' %>
+          </a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+
+            <!-- Menu Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
             </div>
-        </li>
-      </ul>
-  </div>
-</nav>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul id="nav">
+                <li class="current-item"><a href="./index.html">Home</a></li>
+                <li><a href="#">Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="./index.html">- Home</a></li>
+                    <li><a href="./podcast.html">- Podcast</a></li>
+                    <li><a href="./single-podcast.html">- Single Podcast</a></li>
+                    <li><a href="./about.html">- About Us</a></li>
+                    <li><a href="./blog.html">- Blog</a></li>
+                    <li><a href="./single-blog.html">- Blog Details</a></li>
+                    <li><a href="./contact.html">- Contact</a></li>
+                    <li><a href="#">- Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">- Dropdown Item</a></li>
+                        <li><a href="#">- Dropdown Item</a>
+                          <ul class="dropdown">
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">- Dropdown Item</a></li>
+                        <li><a href="#">- Dropdown Item</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="./podcast.html">Podcasts</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#">Blog</a>
+                  <ul class="dropdown">
+                    <li><a href="./blog.html">- Blog</a></li>
+                    <li><a href="./single-blog.html">- Blog Details</a></li>
+                  </ul>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+
+              <!-- Top Search Area -->
+              <div class="top-search-area">
+                <form action="index.html" method="post">
+                  <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+              </div>
+
+              <!-- Top Social Area -->
+              <div class="top-social-area">
+                <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
+                <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
+                <a href="#" class="fa fa-pinterest" aria-hidden="true"></a>
+                <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
+                <a href="#" class="fa fa-youtube-play" aria-hidden="true"></a>
+              </div>
+
+            </div>
+            <!-- Nav End -->
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>

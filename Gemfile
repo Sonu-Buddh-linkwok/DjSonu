@@ -18,7 +18,13 @@ gem 'figaro'
 # gem 'sqlite3', '~> 1.3.6'
 gem "paperclip", "~> 6.0.0"
 gem 'plyr-rails'
-
+gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'youtube_search', '~> 0.2.0'
+gem "font-awesome-rails"
+# gem 'youtube_it', '~> 2.4', '>= 2.4.2'
+# gem 'nokogiri', '~> 1.10', '>= 1.10.2'
+# gem 'nokogiri', '~> 1.6', '>= 1.6.8.1'
+# gem 'capybara', '~> 2.18'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
@@ -28,15 +34,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'prawn'
-gem 'prawn-table'
-gem 'pdfkit'
 gem 'bootstrap', '~> 4.2.1'
 gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 gem 'jquery-ui-rails'
-gem 'to_words'
 gem 'activestorage', '= 5.2.2'
-gem "aws-sdk-s3", require: false
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -67,12 +68,13 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'wkhtmltopdf-binary', '~> 0.12.3'
+# gem 'wkhtmltopdf-binary', '~> 0.12.3'
+gem 'yt', '~> 0.28.0'
+  
