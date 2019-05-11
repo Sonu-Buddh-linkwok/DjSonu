@@ -393,9 +393,8 @@ ul {
     .classy-nav-container {
       padding: 0 15px; } }
   .classy-nav-container .classy-navbar {
-    height: 50px;
+    height: 80px;
     padding: 0; 
-    background-color: #000000 !important;
   }
     @media only screen and (max-width: 767px) {
       .classy-nav-container .classy-navbar {
@@ -412,7 +411,8 @@ ul {
       text-transform: capitalize;
       color: #ffffff; }
       .classy-nav-container .classy-navbar .classynav ul li a:focus, .classy-nav-container .classy-navbar .classynav ul li a:hover {
-        color: #f55656; }
+        color: #f55656;
+        margin-top: 15px;}
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .classy-nav-container .classy-navbar .classynav ul li a {
           font-size: 14px; } }

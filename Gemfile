@@ -18,10 +18,14 @@ gem 'figaro'
 # gem 'sqlite3', '~> 1.3.6'
 gem "paperclip", "~> 6.0.0"
 gem 'plyr-rails'
-gem 'bootstrap-sass', '~> 3.1.1.0'
+# gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'youtube_search', '~> 0.2.0'
 gem "font-awesome-rails"
-# gem 'youtube_it', '~> 2.4', '>= 2.4.2'
+
+gem 'yt', '~> 0.13.7'
+gem 'bootstrap-sass', '~> 3.3.0.1'
+gem 'autoprefixer-rails'
+gem 'rails-observers'
 # gem 'nokogiri', '~> 1.10', '>= 1.10.2'
 # gem 'nokogiri', '~> 1.6', '>= 1.6.8.1'
 # gem 'capybara', '~> 2.18'
@@ -51,7 +55,6 @@ gem 'devise'
 gem 'jspdf-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'wicked_pdf'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -76,5 +79,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'wkhtmltopdf-binary', '~> 0.12.3'
-gem 'yt', '~> 0.28.0'
-  

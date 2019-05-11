@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Dj Sonu</title>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="turbolinks-visit-control" content="reload"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbolinks-visit-control" content="reload">
+    <meta name="turbolinks-cache-control" content="no-cache">
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
     <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
@@ -13,10 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon -->
-  <!-- <link rel="icon" href="./img/core-img/favicon.ico"> -->
-
-  <!-- Core Stylesheet -->
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="icon" href="./img/core-img/favicon.ico">
 
 
     <%= csrf_meta_tags %>
@@ -45,6 +44,6 @@
           <%= yield %>
         </div>
       </div>
-    <%#= render 'globals/footer' %>
+    <%= render 'globals/footer' %>
   </body>
 </html>

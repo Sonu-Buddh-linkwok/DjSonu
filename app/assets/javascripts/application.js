@@ -19,9 +19,18 @@
 //= require bootstrap.min
 //= require poca.bundle
 //= require active
+//= require vector
+//= require header_logo
+//= require slick
+//= require common
 //= require_self
 
 //= require_tree .
 
-
 //
+
+
+
+
+
+

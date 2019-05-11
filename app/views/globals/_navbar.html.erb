@@ -1,34 +1,22 @@
-
-  <!-- ***** Header Area Start ***** -->
   <header class="header-area">
-    <!-- Main Header Start -->
     <div class="main-header-area">
       <div class="classy-nav-container breakpoint-off">
-        <!-- Classy Menu -->
         <nav class="classy-navbar justify-content-between" id="pocaNav">
-
-          <!-- Logo -->
-          <a class="nav-brand" href="index.html">
-            <%= image_tag "logo.png", alt: '' %>
-          </a>
-
-          <!-- Navbar Toggler -->
+          <canvas id="canvas"></canvas>
           <div class="classy-navbar-toggler">
             <span class="navbarToggler"><span></span><span></span><span></span></span>
           </div>
-
-          <!-- Menu -->
           <div class="classy-menu">
 
-            <!-- Menu Close Button -->
             <div class="classycloseIcon">
               <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
             </div>
 
-            <!-- Nav Start -->
             <div class="classynav">
               <ul id="nav">
-                <li class="current-item"><a href="./index.html">Home</a></li>
+                <li class="current-item">
+                <%= link_to "Home" , welcome_demo_path %>
+                </li>
                 <li><a href="#">Pages</a>
                   <ul class="dropdown">
                     <li><a href="./index.html">- Home</a></li>
@@ -55,7 +43,6 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="./podcast.html">Podcasts</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="#">Blog</a>
                   <ul class="dropdown">
@@ -66,7 +53,6 @@
                 <li><a href="./contact.html">Contact</a></li>
               </ul>
 
-              <!-- Top Search Area -->
               <div class="top-search-area">
                 <form action="index.html" method="post">
                   <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
@@ -74,18 +60,33 @@
                 </form>
               </div>
 
-              <!-- Top Social Area -->
               <div class="top-social-area">
                 <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
-                <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
-                <a href="#" class="fa fa-pinterest" aria-hidden="true"></a>
                 <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
                 <a href="#" class="fa fa-youtube-play" aria-hidden="true"></a>
               </div>
 
             </div>
-            <!-- Nav End -->
           </div>
+          
+          <div class="w3-container">
+            <ul class=" one-line">
+              <li class="nav navbar-right">
+                <div class="w3-dropdown-click pull-right">
+                  <strong><p onclick= "myFunction()" class="text_height user_email" ><%= current_user.email%></p></strong>
+                  <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
+                    <% if user_signed_in? %>
+                      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'w3-bar-item w3-button' %>
+                      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'w3-bar-item w3-button' %>
+                    <% else %>
+                      <%= link_to "Sign up", new_user_registration_path, :class => 'w3-bar-item w3-button' %>
+                      <%= link_to "Login", new_user_session_path, :class => 'w3-bar-item w3-button' %>
+                    <% end %>
+                  </div>
+              </li>
+            </ul>
+          </div>
+    
         </nav>
       </div>
     </div>

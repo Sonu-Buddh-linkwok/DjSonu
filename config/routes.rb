@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions'    }
   root 'welcome#index'
+  # root to: 'video#index'
+  get 'welcome/demo'
   get 'welcome/index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post 'welcome/subscriber_request'
+  
+  resources :videos, only: [:index, :new, :create]
 end

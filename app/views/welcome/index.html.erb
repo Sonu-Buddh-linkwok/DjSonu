@@ -3,29 +3,62 @@
     <div class="preloader-thumbnail">
       <%= image_tag "preloader.png", alt: '' %>
     </div>
-  </div>
-  <!-- ***** Welcome Area Start ***** -->
-  <section class="welcome-area">
-    <!-- Welcome Slides -->
-    <div class="welcome-slides owl-carousel">
+    
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Share your videos with the world!</h1>
+        <p>Click the button below to share your video from YouTube.</p>
+        <p>
+          <%= link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg' %>
+        </p>
+      </div>
+    </div>
 
-      <!-- Single Welcome Slide -->
+    <% if @videos.any? %>
+      <div class="container">
+        <h1>Latest videos</h1>
+        <div id="player-wrapper"></div>
+        <% @videos.in_groups_of(3) do |group| %>
+          <div class="row">
+            <% group.each do |video| %>
+              <% if video %>
+                <div class="col-md-4">
+                  <div class="yt_video thumbnail">
+                    <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
+                                          class: 'img-rounded'),
+                                "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
+                    <div class="caption">
+                      <h5><%= video.title %></h5>
+                      <p>Published at <%= video.published_at.strftime('%-d %B %Y %H:%M:%S') %></p>
+                      <p>
+                        <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
+                        <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+  <section class="welcome-area">
+    <div class="welcome-slides owl-carousel">
       <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(<%= asset_path '2.jpg' %>);">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
           </div>
         </div>
-
-
     </div>
   </section>
-  <!-- ***** Welcome Area End ***** -->
 
-  <!-- ***** Latest Episodes Area Start ***** -->
   <section class="poca-latest-epiosodes section-padding-80">
     <div class="container">
       <div class="row">
-        <!-- Section Heading -->
         <div class="col-12">
           <div class="section-heading text-center">
             <h2>Latest Episodes</h2>
@@ -35,7 +68,6 @@
       </div>
     </div>
 
-    <!-- Projects Menu -->
     <div class="container">
       <div class="poca-projects-menu mb-30 wow fadeInUp" data-wow-delay="0.3s">
         <div class="text-center portfolio-menu">
@@ -50,10 +82,7 @@
 
     <div class="container">
       <div class="row poca-portfolio">
-
-        <!-- Single gallery Item -->
         <div class="col-12 col-md-6 single_gallery_item entre wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
               <%= image_tag "5.jpg", alt: '' %>
@@ -64,14 +93,11 @@
               <div class="music-meta-data">
                 <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
               </div>
-              <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
-                  <!-- <source src="/assets/audio/"> -->
                     <%= asset_path('dummy-audio.mp3') %>
                 </audio>
               </div>
-              <!-- Likes, Share & Download -->
               <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
                 <div>
@@ -83,9 +109,7 @@
           </div>
         </div>
 
-        <!-- Single gallery Item -->
         <div class="col-12 col-md-6 single_gallery_item entre tutor wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
               <%= image_tag "6.jpg", alt: '' %>
@@ -96,13 +120,11 @@
               <div class="music-meta-data">
                 <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
               </div>
-              <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
                   <%= asset_path('dummy-audio.mp3') %>
                 </audio>
               </div>
-              <!-- Likes, Share & Download -->
               <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
                 <div>
@@ -114,10 +136,7 @@
           </div>
         </div>
 
-
-        <!-- Single gallery Item -->
         <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
               <%= image_tag "8.jpg", alt: '' %>
@@ -128,13 +147,11 @@
               <div class="music-meta-data">
                 <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
               </div>
-              <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
                   <%= asset_path('dummy-audio.mp3') %>
                 </audio>
               </div>
-              <!-- Likes, Share & Download -->
               <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
                 <div>
@@ -146,10 +163,7 @@
           </div>
         </div>
 
-
-        <!-- Single gallery Item -->
         <div class="col-12 col-md-6 single_gallery_item tech wow fadeInUp" data-wow-delay="0.2s">
-          <!-- Welcome Music Area -->
           <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
             <div class="poca-music-thumbnail">
               <%= image_tag "10.jpg", alt: '' %>
@@ -160,13 +174,11 @@
               <div class="music-meta-data">
                 <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
               </div>
-              <!-- Music Player -->
               <div class="poca-music-player">
                 <audio preload="auto" controls>
                   <%= asset_path('dummy-audio.mp3') %>
                 </audio>
               </div>
-              <!-- Likes, Share & Download -->
               <div class="likes-share-download d-flex align-items-center justify-content-between">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
                 <div>
@@ -189,13 +201,10 @@
       </div>
     </div>
   </section>
-  <!-- ***** Latest Episodes Area End ***** -->
 
-  <!-- ***** Featured Guests Area Start ***** -->
   <section class="featured-guests-area">
     <div class="container">
       <div class="row">
-        <!-- Section Heading -->
         <div class="col-12">
           <div class="section-heading text-center">
             <h2>Featured Guests</h2>
@@ -205,7 +214,6 @@
       </div>
 
       <div class="row justify-content-around">
-        <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
             <%= image_tag "25.jpg", alt: '' %>
@@ -216,7 +224,6 @@
           </div>
         </div>
 
-        <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
             <%= image_tag "26.jpg", alt: '' %>
@@ -227,7 +234,6 @@
           </div>
         </div>
 
-        <!-- Single Featured Guest -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="single-featured-guest mb-80">
             <%= image_tag "27.jpg", alt: '' %>
@@ -240,27 +246,24 @@
       </div>
     </div>
   </section>
-  <!-- ***** Featured Guests Area End ***** -->
 
-  <!-- ***** Newsletter Area Start ***** -->
   <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url(<%= asset_path '15.jpg' %>);">
     <div class="container">
       <div class="row align-items-center">
-        <!-- Newsletter Content -->
         <div class="col-12 col-lg-6">
           <div class="newsletter-content mb-50">
             <h2>Sign Up To Newsletter</h2>
             <h6>Subscribe to receive info on our latest news and episodes</h6>
           </div>
         </div>
-        <!-- Newsletter Form -->
         <div class="col-12 col-lg-6">
           <div class="newsletter-form mb-50">
-            <form action="#" method="post">
-              <input type="email" name="nl-email" class="form-control" placeholder="Your Email">
-              <button type="submit" class="btn">Subscribe</button>
-            </form>
+              <%= form_tag 'welcome/subscriber_request', method: :post do %>
+                <%= text_field_tag :email, params[:email], placeholder: 'Your Email', class: 'form-control', required: true %>
+                <%= submit_tag "Subscribe", class: 'btn subscribe_button' %>
+              <% end %>
           </div>
+          
         </div>
       </div>
     </div>
