@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  
+  console.log('.................1..................');
   const config = {
     text: "Sonu Dj",
     widthToSpikeLengthRatio: 0.054
@@ -66,6 +66,7 @@ $( document ).ready(function() {
   let tick;
 
   function setup() {
+    console.log('.................2..................');
     tick = 0;
     planets = [];
     let len = Math.round(Math.random()*3+3);
@@ -81,6 +82,7 @@ $( document ).ready(function() {
   }
 
   function reset() {
+    console.log('.................3..................');
     hue = colorConfig.baseHue; 
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
@@ -93,6 +95,7 @@ $( document ).ready(function() {
   }
 
   function mousemove(event) {
+    console.log('.................4..................');
     let x = event.clientX;
     let y = event.clientY;
     planets[0].pos.x = x;
@@ -100,6 +103,7 @@ $( document ).ready(function() {
   }
 
   function draw() {
+    console.log('.................5..................');
     clear();
     requestAnimationFrame(draw);
     updateParticles();
@@ -108,10 +112,12 @@ $( document ).ready(function() {
   }
 
   function clear() {
+    console.log('.................6..................');
     ctx.clearRect(0, 0, w, h);
   }
 
   function drawText() {
+    console.log('.................7..................');
     ctx.save();
     let fontSize = w * 0.2;
     ctx.font = "bold " + fontSize + "px Arial, Helvetica, sans-serif";
@@ -142,6 +148,7 @@ $( document ).ready(function() {
   }
 
   function updatePlanets() {
+    console.log('.................8..................');
     let len = planets.length;
     for(let i = 1; i < len; i++) {
       let angle = Math.PI*2/(len-1)*i;
@@ -155,6 +162,7 @@ $( document ).ready(function() {
   }
 
   function updateParticles() {
+    console.log('.................9..................');
     hue += colorConfig.hueSpeed; 
     let h = Math.sin(hue) * colorConfig.hueRange + colorConfig.baseHue;
     ctx.strokeStyle = `hsla(${h}, ${colorConfig.colorSaturation}%, 50%, ${colorConfig.particleOpacity})`;  
